@@ -10,8 +10,8 @@ export default function Hero() {
         <Name>명현화<Dot>.</Dot></Name>
         <Title>Vue / React Publisher & UI/UX Designer</Title>
         <Desc>
-          15년 경력의 UI/UX 디자이너 &amp; 퍼블리셔입니다.<br />
-          웹사이트, 브랜드, HMI부터 대시보드 UI까지 — 디자인으로 문제를 풉니다.
+          15년 경력의 Vue · React 퍼블리셔 &amp; UI/UX 디자이너입니다.<br />
+          웹사이트, 브랜드, HMI부터 대시보드 UI까지 — 디자인과 개발로 문제를 풉니다.
         </Desc>
         <ButtonRow>
           <PrimaryBtn href="#works">작업 보기</PrimaryBtn>
