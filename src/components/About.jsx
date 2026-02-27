@@ -36,7 +36,7 @@ export default function About() {
         <Left>
           <SectionLabel>ABOUT ME</SectionLabel>
           <SectionTitle>명현화<Dot>.</Dot></SectionTitle>
-          <Role>UI/UX Designer &amp; Publisher</Role>
+          <Role>Vue / React Publisher &amp; UI/UX Designer</Role>
           <Bio>
             한양사이버대학교 디자인대학원 석사 출신으로,<br />
             <strong>총 15년 이상</strong>의 실무 경험을 가진 UI/UX 디자이너·퍼블리셔입니다.<br /><br />
