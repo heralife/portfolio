@@ -12,6 +12,11 @@ const codeLines = [
   [['k', '</template>']],
 ]
 
+function go(e, id) {
+  e.preventDefault()
+  document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+}
+
 export default function Hero() {
   return (
     <Section id="hero">
@@ -30,8 +35,8 @@ export default function Hero() {
             15년간 웹·브랜드·HMI·대시보드를 디자인하고 구현해 왔습니다.
           </Desc>
           <Buttons>
-            <Primary href="#process">디자인 ⇄ 코드 보기</Primary>
-            <Ghost href="#works">작업물</Ghost>
+            <Primary href="#process" onClick={e => go(e, 'process')}>디자인 ⇄ 코드 보기</Primary>
+            <Ghost href="#works" onClick={e => go(e, 'works')}>작업물</Ghost>
           </Buttons>
           <Stats>
             <div><b>15+</b><span>years</span></div>
