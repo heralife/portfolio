@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import {
   SiAdobephotoshop, SiAdobeillustrator, SiAdobexd, SiAdobeindesign,
@@ -35,7 +36,18 @@ const careers = [
   { period: '2015.09 – 2021.04', company: '메카테크놀러지', role: 'WEB사업부 · 차장', desc: 'UI/UX 디자인, HMI 개발(WinccOA), 삼성 계열 FAB 제어시스템 및 웹사이트 퍼블리싱 전반' },
 ]
 
+const CERT_IMG = import.meta.env.BASE_URL + 'images/cert-sa-shinhan.jpg'
+
 export default function About() {
+  const [certOpen, setCertOpen] = useState(false)
+
+  useEffect(() => {
+    if (!certOpen) return
+    const onKey = e => { if (e.key === 'Escape') setCertOpen(false) }
+    window.addEventListener('keydown', onKey)
+    return () => window.removeEventListener('keydown', onKey)
+  }, [certOpen])
+
   return (
     <Section id="about">
       <Inner>
@@ -80,11 +92,25 @@ export default function About() {
             {codeSkills.map(k => { const I = k.icon; return <Chip key={k.label} $c={k.color}><I size={16} />{k.label}</Chip> })}
           </Chips>
           <Cert>
-            <b>CERTIFIED</b>
-            <p>2025.12 앱 접근성 SA 인증 획득 · 정보처리기사(2016)</p>
+            <CertThumb type="button" onClick={() => setCertOpen(true)} aria-label="소프트웨어 접근성 인증서 크게 보기">
+              <img src={CERT_IMG} alt="신한은행 헤이영캠퍼스 대학교 플랫폼 소프트웨어 접근성 인증서" loading="lazy" />
+            </CertThumb>
+            <CertBody>
+              <b>CERTIFIED</b>
+              <h4>소프트웨어 접근성(SA) 인증</h4>
+              <p>헤이영캠퍼스 대학교 플랫폼 (Android v1.6.1)<br />인증번호 SAC-25174호 · 2025.12.26</p>
+              <small>정보처리기사(2016)</small>
+              <button type="button" onClick={() => setCertOpen(true)}>인증서 보기 ›</button>
+            </CertBody>
           </Cert>
         </Right>
       </Inner>
+      {certOpen && (
+        <Lightbox role="dialog" aria-modal="true" aria-label="소프트웨어 접근성 인증서" onClick={() => setCertOpen(false)}>
+          <CloseBtn type="button" onClick={() => setCertOpen(false)} aria-label="닫기">×</CloseBtn>
+          <img src={CERT_IMG} alt="신한은행 헤이영캠퍼스 대학교 플랫폼 소프트웨어 접근성 인증서" onClick={e => e.stopPropagation()} />
+        </Lightbox>
+      )}
     </Section>
   )
 }
@@ -137,8 +163,34 @@ const Chip = styled.span`
 `
 const Cert = styled.div`
   margin-top:2.2rem;padding:1.1rem 1.2rem;border-radius:12px;
+  display:flex;gap:1.1rem;align-items:center;
   border:1px solid color-mix(in srgb, var(--code) 40%, transparent);
   background:color-mix(in srgb, var(--code) 8%, transparent);
+  @media (max-width:480px){flex-direction:column;align-items:flex-start;}
+`
+const CertThumb = styled.button`
+  flex:none;width:96px;border-radius:6px;overflow:hidden;padding:0;background:#fff;
+  border:1px solid var(--border);box-shadow:var(--shadow);cursor:zoom-in;
+  transition:transform .2s;
+  img{display:block;width:100%;height:auto;}
+  &:hover{transform:translateY(-3px) rotate(-1deg);}
+  &:focus-visible{outline:3px solid var(--accent);outline-offset:2px;}
+`
+const CertBody = styled.div`
   b{font:500 .7rem var(--font-mono);letter-spacing:2px;color:var(--code);}
-  p{font-size:.85rem;color:var(--text);margin-top:.35rem;line-height:1.6;}
+  h4{font-size:.95rem;font-weight:700;color:var(--text);margin-top:.3rem;}
+  p{font-size:.82rem;color:var(--text);margin-top:.25rem;line-height:1.6;}
+  small{display:block;font-size:.75rem;color:var(--text-muted);margin-top:.3rem;}
+  button{margin-top:.55rem;font:500 .78rem var(--font-mono);color:var(--accent);padding:0;}
+  button:hover{text-decoration:underline;}
+`
+const Lightbox = styled.div`
+  position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.78);
+  display:flex;align-items:center;justify-content:center;padding:2rem;cursor:zoom-out;
+  img{max-height:92vh;max-width:100%;width:auto;border-radius:6px;background:#fff;box-shadow:0 20px 60px rgba(0,0,0,.5);cursor:default;}
+`
+const CloseBtn = styled.button`
+  position:absolute;top:1rem;right:1.2rem;width:44px;height:44px;border-radius:50%;
+  background:rgba(255,255,255,.16);color:#fff;font-size:1.8rem;line-height:1;
+  &:hover{background:rgba(255,255,255,.3);}
 `
