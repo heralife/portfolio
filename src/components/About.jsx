@@ -26,7 +26,7 @@ const codeSkills = [
 ]
 
 const careers = [
-  { period: '2026.10 – 2026.12', company: '내담C&C', role: '프리랜서 · 차장', desc: '삼성코닝 Q-Vision 시스템 — 큐브시스템 기반 디자인 및 Vue.js 퍼블리싱' },
+  { period: '2026.11 – 2026.12', company: '내담C&C', role: '프리랜서 · 차장', desc: '삼성코닝 Q-Vision 시스템 — 큐브시스템 기반 디자인 및 Vue.js 퍼블리싱' },
   { period: '2026.05 – 2026.10', company: '에스프로', role: '프리랜서 · 차장', desc: '삼성코닝 KN-MES(SDS) Vue.js 퍼블리싱, 삼성물산 주택 INO 4.0 사내 반응형 시스템(Vue3) 퍼블리싱' },
   { period: '2025.06 – 2025.12', company: '씨딘', role: '프리랜서 · 부장', desc: '헤이영 캠퍼스 대학교 플랫폼 반응형 퍼블리싱 — 앱접근성 SA인증 획득(2025.12.26)' },
   { period: '2024.11 – 2025.02', company: '아이엘포유', role: '프리랜서 · 차장', desc: '퍼시스 그룹 EA 프로젝트 — 반응형 웹 퍼블리싱(JSP)' },
