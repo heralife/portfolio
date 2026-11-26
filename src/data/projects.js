@@ -27,7 +27,7 @@ export const projects = [
   {
     id: 19, category: 'dashboard',
     title: '공정 현황 대시보드',
-    desc: '건설 공정 현황 대시보드 UI — Vue 3 + Element Plus + ECharts + SCSS. 지표 카드(그라데이션/아웃라인/하단 차트 3종), 주간 진행 테이블, 캘린더, 진척률 비교 차트를 구성했고, 위젯을 드래그로 이동·크기 조절하는 배치 모드를 구현했습니다.',
+    desc: '삼성물산 주택 INO 4.0 프로젝트 (2026) — 건설 공정 현황 대시보드 UI 퍼블리싱. Vue 3 + Element Plus + ECharts + SCSS. 지표 카드(그라데이션/아웃라인/하단 차트 3종), 주간 진행 테이블, 캘린더, 진척률 비교 차트를 구성했고, 위젯을 드래그로 이동·크기 조절하는 배치 모드를 구현했습니다.',
     tools: ['Vue 3', 'Element Plus', 'ECharts', 'SCSS'],
     image: '/images/dev-dashboard-main.png',
     images: ['/images/dev-dashboard-main.png', '/images/dev-dashboard-drag.png'],
