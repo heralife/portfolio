@@ -7,7 +7,9 @@ export default function WorkGrid() {
   const [active, setActive] = useState('all')
   const navigate = useNavigate()
 
-  const filtered = active === 'all' ? projects : projects.filter(p => p.category === active)
+  const filtered = active === 'all'
+    ? projects
+    : projects.filter(p => p.category === active || p.also?.includes(active))
 
   return (
     <Section id="works">

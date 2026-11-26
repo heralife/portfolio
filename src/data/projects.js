@@ -25,7 +25,16 @@ export const categoryColors = {
 
 export const projects = [
   {
-    id: 15, category: 'dev',
+    id: 19, category: 'dashboard',
+    title: '공정 현황 대시보드',
+    desc: '건설 공정 현황 대시보드 UI — Vue 3 + Element Plus + ECharts + SCSS. 지표 카드(그라데이션/아웃라인/하단 차트 3종), 주간 진행 테이블, 캘린더, 진척률 비교 차트를 구성했고, 위젯을 드래그로 이동·크기 조절하는 배치 모드를 구현했습니다.',
+    tools: ['Vue 3', 'Element Plus', 'ECharts', 'SCSS'],
+    image: '/images/dev-dashboard-main.png',
+    images: ['/images/dev-dashboard-main.png', '/images/dev-dashboard-drag.png'],
+    year: '2026',
+  },
+  {
+    id: 15, category: 'dev', also: ['dashboard'],
     title: 'SK Hynix PKG Design Platform',
     desc: 'SK Hynix 반도체 패키지 디자인 플랫폼 — React + Tailwind + Bootstrap + styled-components 통합 구현. 복잡한 데이터 테이블, 필터링, 폼 처리 포함.',
     tools: ['React', 'Tailwind CSS', 'Bootstrap', 'styled-components'],
@@ -43,7 +52,7 @@ export const projects = [
     year: '2024',
   },
   {
-    id: 17, category: 'dev',
+    id: 17, category: 'dev', also: ['dashboard'],
     title: '선박통합관리시스템',
     desc: '선박 운항 데이터 통합 관리 대시보드 — React + TypeScript + Tailwind CSS. 실시간 모니터링 UI 구현.',
     tools: ['React', 'TypeScript', 'Tailwind CSS'],
@@ -141,7 +150,7 @@ export const projects = [
     year: '2020',
   },
   {
-    id: 11, category: 'hmi',
+    id: 11, category: 'hmi', also: ['dashboard'],
     title: 'HMI WWT UI DESIGN',
     desc: '공정 제어 시스템 대시보드 — 라이트/다크 테마 2종, 다중 공정 화면 구성.',
     tools: ['Illustrator', 'Adobe XD'],
