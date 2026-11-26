@@ -1,8 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
-/* ─── Dark Theme (default) ─── */
-:root, [data-theme='dark'] {
+/* ─── Dark Theme ─── */
+[data-theme='dark'] {
   --bg:        #0d1117;
   --bg-alt:    #11151d;
   --surface:   #161b22;
@@ -18,8 +18,8 @@
   --font-display: 'Space Grotesk', 'Noto Sans KR', sans-serif;
 }
 
-/* ─── Light Theme ─── */
-[data-theme='light'] {
+/* ─── Light Theme (default) ─── */
+:root, [data-theme='light'] {
   --bg:        #f6f8fa;
   --bg-alt:    #eef1f5;
   --surface:   #ffffff;
@@ -31,6 +31,8 @@
   --code:      #1a7f37;
   --shadow:    0 4px 24px rgba(0,0,0,0.08);
   --shadow-lg: 0 12px 40px rgba(0,0,0,0.14);
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Space Grotesk', 'Noto Sans KR', sans-serif;
 }
 
 /* ─── Base ─── */

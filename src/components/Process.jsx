@@ -196,7 +196,7 @@ const Center = styled.div`
   @media (max-width: 700px) { padding-right: 0; justify-content: flex-start; padding-left: .5rem; }
 `
 const Pre = styled.pre`
-  position: absolute; top: 3.6rem; left: calc(50% + 1.4rem); right: 1rem; font-variant-ligatures: none;
+  position: absolute; top: 3.6rem; left: calc(50% + 1.4rem); right: 1rem; font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0;
   font: .8rem/1.8 var(--font-mono); color: #c9d1d9; white-space: pre; overflow: hidden;
   .k { color: #ff7b72 } .s { color: #a5d6ff } .c { color: #8b949e } .n { color: #79c0ff }
   @media (max-width: 700px) { font-size: .66rem; }

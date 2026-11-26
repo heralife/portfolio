@@ -138,13 +138,13 @@ const Split = styled.div`
 `
 const Pane = styled.div`
   position: relative; padding: 1.4rem; min-height: 340px;
-  background: ${p => p.$side === 'design' ? 'var(--bg-alt)' : 'var(--bg)'};
+  background: ${p => p.$side === 'design' ? 'var(--bg-alt)' : '#0d1117'};
 `
 const PaneTag = styled.span`
   display: inline-block; font: 500 .66rem var(--font-mono); letter-spacing: 1px;
   padding: .25rem .65rem; border-radius: 99px; margin-bottom: 1.6rem;
   background: ${p => p.$side === 'design' ? 'color-mix(in srgb, var(--accent) 18%, transparent)' : 'color-mix(in srgb, var(--code) 16%, transparent)'};
-  color: ${p => p.$side === 'design' ? 'var(--accent-soft)' : 'var(--code)'};
+  color: ${p => p.$side === 'design' ? 'var(--accent-soft)' : '#7ee787'};
 `
 const Mock = styled.div`
   position: relative; background: #fff; color: #111; border-radius: 12px; padding: 1.1rem;
@@ -166,7 +166,7 @@ const Cursor = styled.span`
   padding: 3px 8px; border-radius: 0 8px 8px 8px; animation: ${bob} 3s ease-in-out infinite;
 `
 const Code = styled.pre`
-  font: .68rem/1.85 var(--font-mono); color: #c9d1d9; white-space: pre; overflow: hidden; font-variant-ligatures: none;
+  font: .68rem/1.85 var(--font-mono); color: #c9d1d9; white-space: pre; overflow: hidden; font-variant-ligatures: none; font-feature-settings: "liga" 0, "calt" 0;
   .k { color: #ff7b72 } .s { color: #a5d6ff } .c { color: #8b949e } .n { color: #79c0ff }
 `
 const Line = styled.div`
