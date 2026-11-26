@@ -1,26 +1,28 @@
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 import {
   SiAdobephotoshop, SiAdobeillustrator, SiAdobexd, SiAdobeindesign,
   SiFigma, SiHtml5, SiCss3, SiJavascript, SiSass,
   SiVuedotjs, SiReact, SiTailwindcss, SiBootstrap, SiStyledcomponents, SiJquery
 } from 'react-icons/si'
 
-const skills = [
-  { icon: SiAdobephotoshop,  label: 'Photoshop',          pct: 80, color: '#31A8FF' },
-  { icon: SiAdobeillustrator,label: 'Illustrator',         pct: 85, color: '#FF9A00' },
-  { icon: SiAdobexd,         label: 'Adobe XD',            pct: 80, color: '#FF61F6' },
-  { icon: SiAdobeindesign,   label: 'InDesign',            pct: 75, color: '#FF3366' },
-  { icon: SiFigma,           label: 'Figma',               pct: 70, color: '#F24E1E' },
-  { icon: SiHtml5,           label: 'HTML5',               pct: 90, color: '#E34F26' },
-  { icon: SiCss3,            label: 'CSS3/SCSS',           pct: 88, color: '#1572B6' },
-  { icon: SiJavascript,      label: 'JavaScript',          pct: 65, color: '#F7DF1E' },
-  { icon: SiVuedotjs,        label: 'Vue.js',              pct: 75, color: '#4FC08D' },
-  { icon: SiReact,           label: 'React',               pct: 60, color: '#61DAFB' },
-  { icon: SiTailwindcss,     label: 'Tailwind CSS',        pct: 70, color: '#06B6D4' },
-  { icon: SiBootstrap,       label: 'Bootstrap',           pct: 75, color: '#7952B3' },
-  { icon: SiStyledcomponents,label: 'styled-components',   pct: 70, color: '#DB7093' },
-  { icon: SiJquery,          label: 'jQuery',              pct: 75, color: '#0769AD' },
-  { icon: SiSass,            label: 'Sass',                pct: 80, color: '#CC6699' },
+const designSkills = [
+  { icon: SiFigma, label: 'Figma', color: '#F24E1E' },
+  { icon: SiAdobexd, label: 'Adobe XD', color: '#FF61F6' },
+  { icon: SiAdobephotoshop, label: 'Photoshop', color: '#31A8FF' },
+  { icon: SiAdobeillustrator, label: 'Illustrator', color: '#FF9A00' },
+  { icon: SiAdobeindesign, label: 'InDesign', color: '#FF3366' },
+]
+const codeSkills = [
+  { icon: SiVuedotjs, label: 'Vue.js', color: '#4FC08D' },
+  { icon: SiReact, label: 'React', color: '#61DAFB' },
+  { icon: SiHtml5, label: 'HTML5', color: '#E34F26' },
+  { icon: SiCss3, label: 'CSS3', color: '#1572B6' },
+  { icon: SiSass, label: 'SCSS/Sass', color: '#CC6699' },
+  { icon: SiJavascript, label: 'JavaScript', color: '#F7DF1E' },
+  { icon: SiTailwindcss, label: 'Tailwind CSS', color: '#06B6D4' },
+  { icon: SiBootstrap, label: 'Bootstrap', color: '#7952B3' },
+  { icon: SiStyledcomponents, label: 'styled-components', color: '#DB7093' },
+  { icon: SiJquery, label: 'jQuery', color: '#0769AD' },
 ]
 
 const careers = [
@@ -38,7 +40,7 @@ export default function About() {
     <Section id="about">
       <Inner>
         <Left>
-          <SectionLabel>ABOUT ME</SectionLabel>
+          <SectionLabel>// ABOUT</SectionLabel>
           <SectionTitle>명현화<Dot>.</Dot></SectionTitle>
           <Role>Vue · React Publisher &amp; UI/UX Designer</Role>
           <Bio>
@@ -69,28 +71,24 @@ export default function About() {
         </Left>
 
         <Right>
-          <SubTitle>Skills</SubTitle>
-          <SkillGrid>
-            {skills.map(s => (
-              <SkillCard key={s.label}>
-                <SkillIcon $color={s.color}>{(() => { const I = s.icon; return <I size={22} />; })()}</SkillIcon>
-                <SkillInfo>
-                  <SkillName>{s.label}</SkillName>
-                  <BarBg>
-                    <Bar $pct={s.pct} $color={s.color} />
-                  </BarBg>
-                </SkillInfo>
-                <Pct>{s.pct}%</Pct>
-              </SkillCard>
-            ))}
-          </SkillGrid>
+          <SubTitle $c="var(--accent-soft)">● Design</SubTitle>
+          <Chips>
+            {designSkills.map(k => { const I = k.icon; return <Chip key={k.label} $c={k.color}><I size={16} />{k.label}</Chip> })}
+          </Chips>
+          <SubTitle $c="var(--code)" style={{ marginTop: '2rem' }}>● Code</SubTitle>
+          <Chips>
+            {codeSkills.map(k => { const I = k.icon; return <Chip key={k.label} $c={k.color}><I size={16} />{k.label}</Chip> })}
+          </Chips>
+          <Cert>
+            <b>CERTIFIED</b>
+            <p>2025.12 앱 접근성 SA 인증 획득 · 정보처리기사(2016)</p>
+          </Cert>
         </Right>
       </Inner>
     </Section>
   )
 }
 
-const grow = keyframes`from { width: 0 } to { width: var(--w) }`
 
 const Section = styled.section`
   background: var(--bg-alt);
@@ -101,8 +99,8 @@ const Inner = styled.div`
   display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start;
   @media (max-width: 900px) { grid-template-columns: 1fr; gap: 3rem; }
 `
-const SectionLabel = styled.p`font-size:.75rem;font-weight:700;letter-spacing:4px;color:var(--accent);margin-bottom:.5rem;`
-const SectionTitle = styled.h2`font-size:clamp(2rem,5vw,3.5rem);font-weight:900;color:var(--text);letter-spacing:-2px;margin-bottom:.5rem;`
+const SectionLabel = styled.p`font:500 .8rem var(--font-mono);color:var(--code);margin-bottom:.6rem;`
+const SectionTitle = styled.h2`font:700 clamp(2rem,5vw,3.4rem) var(--font-display);color:var(--text);letter-spacing:-2px;margin-bottom:.5rem;`
 const Dot = styled.span`color:var(--accent);`
 const Role = styled.p`font-size:1rem;color:var(--text-muted);margin-bottom:1.5rem;letter-spacing:1px;`
 const Bio = styled.p`font-size:.95rem;line-height:1.9;color:var(--text-muted);margin-bottom:2rem;`
@@ -112,7 +110,7 @@ const Stat = styled.div`
   strong { font-size:1.8rem;font-weight:900;color:var(--accent); }
   span   { font-size:.75rem;color:var(--text-muted); }
 `
-const SubTitle = styled.h3`font-size:1.1rem;font-weight:700;color:var(--text);margin-bottom:1.25rem;`
+const SubTitle = styled.h3`font:500 .9rem var(--font-mono);color:${p=>p.$c||'var(--text)'};margin-bottom:1rem;`
 
 const Timeline = styled.div`display:flex;flex-direction:column;gap:1.25rem;`
 const TimeItem = styled.div`display:flex;gap:1rem;`
@@ -128,25 +126,19 @@ const TimeDesc = styled.p`font-size:.82rem;color:var(--text-muted);line-height:1
 const Left = styled.div``
 const Right = styled.div``
 
-const SkillGrid = styled.div`display:flex;flex-direction:column;gap:.75rem;`
-const SkillCard = styled.div`
-  display:flex;align-items:center;gap:.75rem;
-  background:var(--surface);border-radius:12px;padding:.75rem 1rem;
-  border:1px solid var(--border);
+const Chips = styled.div`display:flex;flex-wrap:wrap;gap:.5rem;`
+const Chip = styled.span`
+  display:inline-flex;align-items:center;gap:.5rem;
+  padding:.5rem .85rem;border-radius:8px;border:1px solid var(--border);
+  background:var(--surface);color:var(--text);font:500 .8rem var(--font-mono);
+  svg{color:${p=>p.$c};}
+  transition:transform .2s,border-color .2s;
+  &:hover{transform:translateY(-3px);border-color:${p=>p.$c};}
 `
-const SkillIcon = styled.div`
-  color:${p=>p.$color};width:36px;height:36px;border-radius:8px;
-  background:${p=>p.$color}18;
-  display:flex;align-items:center;justify-content:center;flex-shrink:0;
+const Cert = styled.div`
+  margin-top:2.2rem;padding:1.1rem 1.2rem;border-radius:12px;
+  border:1px solid color-mix(in srgb, var(--code) 40%, transparent);
+  background:color-mix(in srgb, var(--code) 8%, transparent);
+  b{font:500 .7rem var(--font-mono);letter-spacing:2px;color:var(--code);}
+  p{font-size:.85rem;color:var(--text);margin-top:.35rem;line-height:1.6;}
 `
-const SkillInfo = styled.div`flex:1;`
-const SkillName = styled.p`font-size:.82rem;font-weight:600;color:var(--text);margin-bottom:.35rem;`
-const BarBg = styled.div`height:4px;border-radius:4px;background:var(--border);overflow:hidden;`
-const Bar = styled.div`
-  height:100%;border-radius:4px;
-  background:${p=>p.$color};
-  --w:${p=>p.$pct}%;
-  animation:${grow} 1s ease both;
-  width:var(--w);
-`
-const Pct = styled.span`font-size:.75rem;font-weight:600;color:var(--text-muted);width:32px;text-align:right;`

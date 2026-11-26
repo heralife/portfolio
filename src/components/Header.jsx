@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom'
 
 const navLinks = [
   { id: 'hero',    label: 'Home' },
+  { id: 'process', label: 'Process' },
   { id: 'works',   label: 'Works' },
   { id: 'about',   label: 'About' },
   { id: 'contact', label: 'Contact' },
@@ -81,7 +82,7 @@ const Inner = styled.div`
   display: flex; align-items: center; justify-content: space-between;
 `
 const Logo = styled.button`
-  font-size: 1.6rem; font-weight: 900; letter-spacing: -1px;
+  font-size: 1.3rem; font-weight: 700; letter-spacing: -0.5px; font-family: var(--font-display);
   color: var(--text); background: none; cursor: pointer;
 `
 const Dot = styled.span`color: var(--accent);`
@@ -91,7 +92,7 @@ const Links = styled.nav`
   @media (max-width: 768px) { display: none; }
 `
 const NavLink = styled.button`
-  font-size: 0.9rem; font-weight: 500; color: var(--text-muted);
+  font-size: 0.8rem; font-weight: 500; color: var(--text-muted); font-family: var(--font-mono);
   background: none; cursor: pointer;
   transition: color 0.2s;
   &:hover { color: var(--accent); }

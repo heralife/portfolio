@@ -11,8 +11,8 @@ export default function WorkGrid() {
 
   return (
     <Section id="works">
-      <SectionLabel>PORTFOLIO</SectionLabel>
-      <SectionTitle>Works<Dot>.</Dot></SectionTitle>
+      <SectionLabel>// WORKS</SectionLabel>
+      <SectionTitle>Selected Works<Dot>.</Dot></SectionTitle>
 
       <FilterRow>
         {categories.map(c => (
@@ -50,13 +50,12 @@ const Section = styled.section`
   max-width: 1200px; margin: 0 auto;
 `
 const SectionLabel = styled.p`
-  font-size: 0.75rem; font-weight: 700; letter-spacing: 4px;
-  color: var(--accent); margin-bottom: 0.5rem;
+  font: 500 0.8rem var(--font-mono);
+  color: var(--code); margin-bottom: 0.6rem;
 `
 const SectionTitle = styled.h2`
-  font-size: clamp(2rem, 5vw, 3.5rem);
-  font-weight: 900; color: var(--text);
-  letter-spacing: -2px; margin-bottom: 3rem;
+  font: 700 clamp(2rem, 5vw, 3.4rem) var(--font-display);
+  color: var(--text); letter-spacing: -2px; margin-bottom: 2.5rem;
 `
 const Dot = styled.span`color: var(--accent);`
 
@@ -64,8 +63,8 @@ const FilterRow = styled.div`
   display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 3rem;
 `
 const FilterBtn = styled.button`
-  padding: 0.5rem 1.25rem; border-radius: 50px;
-  font-size: 0.85rem; font-weight: 600;
+  padding: 0.45rem 1rem; border-radius: 8px;
+  font: 500 0.78rem var(--font-mono);
   background: ${p => p.$active ? 'var(--accent)' : 'var(--bg-alt)'};
   color: ${p => p.$active ? '#fff' : 'var(--text-muted)'};
   border: 1px solid ${p => p.$active ? 'var(--accent)' : 'var(--border)'};
@@ -80,13 +79,13 @@ const Grid = styled.div`
   @media (max-width: 480px) { grid-template-columns: 1fr; }
 `
 const Card = styled.div`
-  border-radius: 16px; overflow: hidden;
-  cursor: pointer;
+  border-radius: 14px; overflow: hidden; border: 1px solid var(--border);
+  background: var(--surface); cursor: pointer;
   animation: ${fadeUp} 0.4s ease both;
   animation-delay: ${p => p.$delay}s;
   box-shadow: var(--shadow);
   transition: transform 0.3s, box-shadow 0.3s;
-  &:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  &:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); border-color: var(--accent); }
 `
 const ImgWrap = styled.div`
   position: relative; aspect-ratio: 16/9; overflow: hidden;

@@ -1,30 +1,36 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Inter:wght@300;400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
-/* ─── Light Theme ─── */
-:root, [data-theme='light'] {
-  --bg:        #FAFAFA;
-  --bg-alt:    #F0F0F5;
-  --surface:   #FFFFFF;
-  --border:    rgba(0,0,0,0.08);
-  --text:      #1A1A2E;
-  --text-muted:#6B7280;
-  --accent:    #FF6B6B;
-  --shadow:    0 4px 24px rgba(0,0,0,0.08);
-  --shadow-lg: 0 12px 40px rgba(0,0,0,0.14);
-}
-
-/* ─── Dark Theme ─── */
-[data-theme='dark'] {
-  --bg:        #0D0D1A;
-  --bg-alt:    #12122A;
-  --surface:   #16213E;
-  --border:    rgba(255,255,255,0.08);
-  --text:      #E8E8F0;
-  --text-muted:#9CA3AF;
-  --accent:    #FF6B6B;
+/* ─── Dark Theme (default) ─── */
+:root, [data-theme='dark'] {
+  --bg:        #0d1117;
+  --bg-alt:    #11151d;
+  --surface:   #161b22;
+  --border:    rgba(255,255,255,0.10);
+  --text:      #f0f3f6;
+  --text-muted:#8b949e;
+  --accent:    #9b6dff;   /* design (purple) */
+  --accent-soft:#c9a0ff;
+  --code:      #7ee787;   /* code (green) */
   --shadow:    0 4px 24px rgba(0,0,0,0.4);
   --shadow-lg: 0 12px 40px rgba(0,0,0,0.6);
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Space Grotesk', 'Noto Sans KR', sans-serif;
+}
+
+/* ─── Light Theme ─── */
+[data-theme='light'] {
+  --bg:        #f6f8fa;
+  --bg-alt:    #eef1f5;
+  --surface:   #ffffff;
+  --border:    rgba(0,0,0,0.10);
+  --text:      #1f2328;
+  --text-muted:#59636e;
+  --accent:    #7c4dff;
+  --accent-soft:#6b3fe0;
+  --code:      #1a7f37;
+  --shadow:    0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.14);
 }
 
 /* ─── Base ─── */
