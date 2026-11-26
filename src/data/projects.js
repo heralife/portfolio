@@ -150,7 +150,7 @@ export const projects = [
     year: '2020',
   },
   {
-    id: 11, category: 'hmi', also: ['dashboard'],
+    id: 11, category: 'hmi',
     title: 'HMI WWT UI DESIGN',
     desc: '공정 제어 시스템 대시보드 — 라이트/다크 테마 2종, 다중 공정 화면 구성.',
     tools: ['Illustrator', 'Adobe XD'],
