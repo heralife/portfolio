@@ -24,9 +24,13 @@ const skills = [
 ]
 
 const careers = [
-  { period: '2025.06 – 2025.12', company: '씨딘', role: '프리랜서', desc: '신한은행 헤이영 캠퍼스 플랫폼 운영 — Vue.js, 접근성(SA인증) 개발' },
-  { period: '2022.04 – 2025.02', company: '아이엘포유', role: '프리랜서', desc: '삼성SDS M.OFFICE, LEGO 디자인·퍼블리싱, 파시스 EA 반응형 웹 개발' },
-  { period: '2015.09 – 2021.04', company: '메카테크', role: 'WEB사업부 차장', desc: 'UI/UX 디자인, HMI 심볼 디자인, 웹사이트 퍼블리싱 전반 담당' },
+  { period: '2026.10 – 2026.12', company: '내담C&C', role: '프리랜서 · 차장', desc: '삼성코닝 Q-Vision 시스템 — 큐브시스템 기반 디자인 및 Vue.js 퍼블리싱' },
+  { period: '2026.05 – 2026.10', company: '에스프로', role: '프리랜서 · 차장', desc: '삼성코닝 KN-MES(SDS) Vue.js 퍼블리싱, 삼성물산 주택 INO 4.0 사내 반응형 시스템(Vue3) 퍼블리싱' },
+  { period: '2025.06 – 2025.12', company: '씨딘', role: '프리랜서 · 부장', desc: '헤이영 캠퍼스 대학교 플랫폼 반응형 퍼블리싱 — 앱접근성 SA인증 획득(2025.12.26)' },
+  { period: '2024.11 – 2025.02', company: '아이엘포유', role: '프리랜서 · 차장', desc: '퍼시스 그룹 EA 프로젝트 — 반응형 웹 퍼블리싱(JSP)' },
+  { period: '2024.03 – 2024.08', company: '인투데이타시스템', role: '프리랜서 · 차장', desc: '삼성SDS M.OFFICE 업무앱·관리 콘솔 — Vue.js 퍼블리싱' },
+  { period: '2022.04 – 2024.02', company: '아이엘포유', role: '프리랜서 · 차장', desc: '삼성SDS 악성메일 모의훈련시스템 디자인·퍼블리싱, M.OFFICE Vue.js + Vuetify 퍼블리싱' },
+  { period: '2015.09 – 2021.04', company: '메카테크놀러지', role: 'WEB사업부 · 차장', desc: 'UI/UX 디자인, HMI 개발(WinccOA), 삼성 계열 FAB 제어시스템 및 웹사이트 퍼블리싱 전반' },
 ]
 
 export default function About() {
@@ -45,7 +49,7 @@ export default function About() {
           </Bio>
           <StatRow>
             <Stat><strong>15+</strong><span>Years Exp.</span></Stat>
-            <Stat><strong>14+</strong><span>Projects</span></Stat>
+            <Stat><strong>30+</strong><span>Projects</span></Stat>
             <Stat><strong>석사</strong><span>디자인융합</span></Stat>
           </StatRow>
 
